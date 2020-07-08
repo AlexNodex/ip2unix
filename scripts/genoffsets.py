@@ -28,7 +28,7 @@ if __name__ == '__main__':
         formatted = [', '.join(['{:>5}'.format(o) for o in chunk])
                      for chunk in chunks]
 
-        sig = 'static constexpr std::array<uint16_t, {}> PORT_OFFSETS'
+        sig = 'static std::array<uint16_t, {}> PORT_OFFSETS'
         header = sig.format(len(offsets)) + ' {{\n    '
         out = header + ',\n    '.join(formatted) + '\n}};\n'
 
